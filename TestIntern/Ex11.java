@@ -1,10 +1,18 @@
 public class Ex11 {
     public static void main(String[] args) {
-        int items = 100; //ชิ้น
+        int machines = 5;
+        int productionPerMachine = 5;
+        int targetProduction = 100;
 
-        // 1 เครื่อง 1 นาที ผลิตได้ 1 ชิ้น
-        float total_minutes = 1 * items;
+        // คำนวณเวลาที่ใช้ในการผลิต 1 ชิ้น
+        int timePerItem = 5 / productionPerMachine;
 
-        System.out.println("Total minutes: " + total_minutes);
+        // คำนวณเวลาที่ใช้ในการผลิตทั้งหมด
+        int totalProductionTime = timePerItem * targetProduction;
+
+        // คำนวณเวลาที่ใช้ในการให้เครื่องจักร 100 เครื่อง
+        int totalTimeFor100Machines = totalProductionTime / machines;
+
+        System.out.println("100 machine: " + totalTimeFor100Machines + " minute");
     }
 }
